@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Generated file customer_en.xml</comment>
+<entry key="LASTNAME">Lastname</entry>
+<entry key="CUSTOMER">Customer</entry>
+<entry key="FIRSTNAME">Firstna:me</entry>
+<entry key="DAY_OF_BIRTH">Birthday</entry>
+</properties>

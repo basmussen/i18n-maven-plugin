@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Generated file invoice_en.xml</comment>
+<entry key="INVOICE">Invoice</entry>
+<entry key="INVOICE_NO">Inoivce No.</entry>
+</properties>
