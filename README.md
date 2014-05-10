@@ -29,18 +29,6 @@ To use this i18n Maven Plugin, include it in your `pom.xml` file:
           </goals>
         </execution>
       </executions>
-      <configuration>
-        <localeCell>C1</localeCell>
-        <keyCell>B4</keyCell>
-        <files>
-          <file>src/main/resources/i18n.xls</file>
-        </files>
-        <outputFormat>
-          <format>properties</format>
-          <format>json</format>
-          <format>xml</format>
-        </outputFormat>
-      </configuration>
     </plugin>
     ...
   </plugins>
