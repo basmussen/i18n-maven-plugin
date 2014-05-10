@@ -1,6 +1,6 @@
 # [i18n Maven Plugin]( http://github.com/basmussen/i18n-maven-plugin/ )
 
-Handle internationalization and localization easily with the is an Apache Maven Plugin with the i18n Maven Plugin.
+Handle internationalization and localization easily with the Apache Maven Plugin i18n.
 
 To get started and see how the plungin works, check out the project page!
 
