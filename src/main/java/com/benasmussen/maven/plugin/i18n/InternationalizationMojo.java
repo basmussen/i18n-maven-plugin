@@ -47,6 +47,8 @@ import com.benasmussen.maven.plugin.i18n.io.XmlResourceWriter;
 public class InternationalizationMojo extends AbstractMojo
 {
 
+    private static final String DEFAULT_FILE = "src/main/i18n/i18n.xls";
+
     public static final String FORMAT_JSON = "json";
     public static final String FORMAT_XML = "xml";
     public static final String FORMAT_PROPERTIES = "properties";
@@ -114,6 +116,14 @@ public class InternationalizationMojo extends AbstractMojo
                 outputDirectory.mkdirs();
             }
 
+            // use default file if empty
+            if (files == null || files.isEmpty())
+            {
+                files = new ArrayList<String>();
+                files.add(DEFAULT_FILE);
+            }
+
+            // loop files
             for (String file : files)
             {
                 currentFile = file;
