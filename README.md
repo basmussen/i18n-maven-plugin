@@ -23,7 +23,7 @@ To use this i18n Maven Plugin, include it in your `pom.xml` file:
       <executions>
         <execution>
           <id>i18n</id>
-          <phase>package</phase>
+          <phase>generate-resources</phase>
           <goals>
             <goal>i18n</goal>
           </goals>
@@ -57,7 +57,7 @@ A sample configuration file is given below:
       <executions>
         <execution>
           <id>i18n</id>
-          <phase>package</phase>
+          <phase>generate-resources</phase>
           <goals>
             <goal>i18n</goal>
           </goals>
@@ -67,7 +67,7 @@ A sample configuration file is given below:
         <localeCell>C1</localeCell>
         <keyCell>B4</keyCell>
         <files>
-          <file>src/main/resources/i18n.xls</file>
+          <file>src/main/i18n/codes.xls</file>
         </files>
         <outputFormat>
           <format>properties</format>
