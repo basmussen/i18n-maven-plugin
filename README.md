@@ -15,6 +15,14 @@ customer_en.properties
 invoice.properties
 invoice_en.properties
 ```
+```
+#Generated file customer.properties
+#Sat May 10 01:56:34 CEST 2014
+CUSTOMER=Customer
+FIRSTNAME=Firstname
+LASTNAME=Lastname
+
+```
 
 **JSON**
 
@@ -23,6 +31,14 @@ customer.json
 customer_en.json
 invoice.json
 invoice_en.json
+```
+
+```
+{
+  "CUSTOMER": "Customer",
+  "FIRSTNAME": "Firstname",
+  "LASTNAME": "Lastname"
+}
 ```
 
 **XML**
@@ -34,6 +50,16 @@ invoice.xml
 invoice_en.xml
 ```
 
+```
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <comment>Generated file customer.xml</comment>
+  <entry key="LASTNAME">Lastname</entry>
+  <entry key="CUSTOMER">Customer</entry>
+  <entry key="FIRSTNAME">Firstname</entry>
+</properties>
+```
 
 
 [bootstrap]: http://basmussen.github.io/i18n-maven-plugin
