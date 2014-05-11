@@ -44,11 +44,13 @@ public class OrderedProperties extends Properties
     private static final long serialVersionUID = 1L;
     private Map<String, String> entries = new LinkedHashMap<String, String>();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public Enumeration keys()
     {
         return Collections.enumeration(entries.keySet());
     }
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public Enumeration elements()
     {
         return Collections.enumeration(entries.values());
@@ -59,6 +61,7 @@ public class OrderedProperties extends Properties
         return entries.containsValue(value);
     }
 
+    @SuppressWarnings("unchecked")
     public void putAll(Map<? extends Object, ? extends Object> map)
     {
         entries.putAll((Map<? extends String, ? extends String>) map);
@@ -104,16 +107,19 @@ public class OrderedProperties extends Properties
         entries.clear();
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public Set keySet()
     {
         return entries.keySet();
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public Collection values()
     {
         return entries.values();
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public Set entrySet()
     {
         return entries.entrySet();
