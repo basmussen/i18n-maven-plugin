@@ -65,15 +65,30 @@ public class InternationalizationMojo extends AbstractMojo
     @Parameter(defaultValue = "UTF-8", property = "outputEncoding", required = true)
     private String outputEncoding;
 
+    /**
+     * Excel files
+     */
     @Parameter(property = "files", required = true)
     private List<String> files;
 
+    /**
+     * Excel key cell
+     */
     @Parameter(property = "keyCell", defaultValue = "A2")
     private String keyCell;
 
+    /**
+     * Excel locale cell
+     */
     @Parameter(property = "localeCell", defaultValue = "B1")
     private String localeCell;
 
+    /**
+     * Resource file output format. Supported values <br>
+     * properties <br>
+     * json <br>
+     * xml
+     */
     @Parameter(property = "outputFormat", required = true)
     private List<String> outputFormat;
 

@@ -93,25 +93,3 @@ src/main/i18n/i18n.xls
 </project>
 +-----+
 
-** Output file:
-
- Properties output files
-
-+-----+
-customer.properties
-customer_en.properties
-invoice.properties
-invoice_en.properties
-+-----+
-
-** File content customer_en.properties
-
-  You can configure the style attribute value of the div container for your topbar
-
-+-----+
-#Generated file customer.properties
-#Sat May 10 01:56:34 CEST 2014
-CUSTOMER=Customer
-FIRSTNAME=Firstname
-LASTNAME=Lastname
-+-----+

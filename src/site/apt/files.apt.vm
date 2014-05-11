@@ -28,8 +28,6 @@
 
 Internationalization files
 
-* Input internationalization files
-
  Add your i18n.xls file into src/main/i18n.
 
 +-----+
