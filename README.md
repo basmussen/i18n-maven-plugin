@@ -4,6 +4,38 @@ Handle internationalization and localization easily with the Apache Maven Plugin
 
 To get started and see how the plungin works, check out the project page!
 
+
+Convert your Excel sheets to resource files. Your input file `i18n.xls` will be converted to different output resource files.
+
+**Properties**
+
+```
+customer.properties
+customer_en.properties
+invoice.properties
+invoice_en.properties
+```
+
+**JSON**
+
+```
+customer.json
+customer_en.json
+invoice.json
+invoice_en.json
+```
+
+**XML**
+
+```
+customer.xml
+customer_en.xml
+invoice.xml
+invoice_en.xml
+```
+
+
+
 [bootstrap]: http://basmussen.github.io/i18n-maven-plugin
 
 ## Usage
