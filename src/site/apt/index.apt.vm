@@ -29,7 +29,7 @@
 Welcome to ${project.name}!
 
  Handle internationalization and localization easily with the i18n Maven Plugin. Convert your Excel sheets to resource files. Your input file i18n.xls will be converted to different output resource files. 
- To get started and see how the plugin could be used, check out the project documentation!  
+ To get started and see how the plugin could be used, check out this project documentation!  
 
 * Usage
 

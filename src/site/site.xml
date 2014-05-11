@@ -40,8 +40,9 @@
 	<body>
 		<menu name="Overview">
 			<item name="Introduction" href="./index.html" />
-			<item name="Configuration" href="./sample.html" />
-			<item name="Press" href="./press.html" />
+			<item name="Goals" href="./plugin-info.html" />
+			<item name="Usage" href="./usage.html" />
+			<item name="Files" href="./files.html" />
 		</menu>
 
 		<menu ref="reports" />

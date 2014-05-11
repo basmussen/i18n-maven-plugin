@@ -41,7 +41,7 @@ import com.benasmussen.maven.plugin.i18n.io.ResourceWriter;
 import com.benasmussen.maven.plugin.i18n.io.XmlResourceWriter;
 
 /**
- * Goal which touches a timestamp file.
+ * Goal which create internationalization resource files from i18n.xls
  */
 @Mojo(name = "i18n", defaultPhase = LifecyclePhase.PROCESS_RESOURCES)
 public class InternationalizationMojo extends AbstractMojo
@@ -65,16 +65,6 @@ public class InternationalizationMojo extends AbstractMojo
     @Parameter(defaultValue = "UTF-8", property = "outputEncoding", required = true)
     private String outputEncoding;
 
-    /**
-     * Input excel files
-     * 
-     * <pre>
-     *   <files>
-     *     <param>translate.xls</param>
-     *     <param>codes.xls</param>
-     *   </files>
-     * </pre>
-     */
     @Parameter(property = "files", required = true)
     private List<String> files;
 
@@ -84,23 +74,6 @@ public class InternationalizationMojo extends AbstractMojo
     @Parameter(property = "localeCell", defaultValue = "B1")
     private String localeCell;
 
-    /**
-     * Output format
-     * 
-     * <pre>
-     * Properties
-     * JSON
-     * XML
-     * </pre>
-     * 
-     * <pre>
-     *  <outputFormat>
-     *     <format>properties</format>
-     *     <format>json</format>
-     *     <format>xml</format>
-     *  </outputFormat>
-     * </pre>
-     */
     @Parameter(property = "outputFormat", required = true)
     private List<String> outputFormat;
 

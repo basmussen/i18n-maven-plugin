@@ -28,19 +28,19 @@
 						</goals>
 					</execution>
 				</executions>
-				<configuration>
-					<localeCell>C1</localeCell>
-					<keyCell>B4</keyCell>
-					<files>
-						<file>src/test/resources/test.xls</file>
-					</files>
-					<outputFormat>
-						<format>properties</format>
-						<format>json</format>
-						<format>xml</format>
-					</outputFormat>
-					<outputDirectory>target/i18n</outputDirectory>
-				</configuration>
+<!-- 				<configuration> -->
+<!-- 					<localeCell>C1</localeCell> -->
+<!-- 					<keyCell>B4</keyCell> -->
+<!-- 					<files> -->
+<!-- 						<file>src/test/resources/test.xls</file> -->
+<!-- 					</files> -->
+<!-- 					<outputFormat> -->
+<!-- 						<format>properties</format> -->
+<!-- 						<format>json</format> -->
+<!-- 						<format>xml</format> -->
+<!-- 					</outputFormat> -->
+<!-- 					<outputDirectory>target/i18n</outputDirectory> -->
+<!-- 				</configuration> -->
 			</plugin>
 		</plugins>
 	</build>
