@@ -31,65 +31,34 @@ Welcome to ${project.name}!
  Handle internationalization and localization easily with the i18n Maven Plugin. Convert your Excel sheets to resource files. Your input file i18n.xls will be converted to different output resource files. 
  To get started and see how the plugin could be used, check out this project documentation!  
 
-* Usage
+[./images/screenshot.png]
 
- Include and configure the plugin to your pom.xml.
-
-+-----+
-<project>
-  ...
-  <build>
-   ...
-   <plugins>
-     ...
-     <plugin>
-       <groupId>${project.groupId}</groupId>
-       <artifactId>${project.artifactId}</artifactId>
-       <version>${project.version}</version>
-        <executions>
-          <execution>
-            <id>i18n</id>
-            <phase>generate-resources</phase>
-            <goals>
-               <goal>i18n</goal>
-            </goals>
-          </execution>
-        </executions>
-     </plugin>
-     ...
-   </plugins>
-   ...
-  </build>
-  ...
-</project>
-+-----+
-
-** Internationalization file
- 
- Add your i18n.xls file to the internationalization folder.
+* Location
 
 +-----+ 
 src/main/i18n/i18n.xls
 +-----+
 
-** Maven Repository
+* Output
 
- Add the following maven repository to your pom.xml file to use the plugin.
+** Files
+
++-----+ 
+customer.properties
+customer_en.properties
+invoice.properties
+invoice_en.properties
++-----+
+
+** Content
 
 +-----+
-<project>
-  ...
-  <repository>
-    <id>github-plugin-releases</id>
-    <url>http://basmussen.github.io/repos/maven/plugins/releases/</url>
-    <releases>
-      <enabled>true</enabled>
-    </releases>
-    <snapshots>
-      <enabled>false</enabled>
-    </snapshots>
-  </repository>  
-  ...
-</project>
+#Generated file customer.properties
+#Sat May 10 01:56:34 CEST 2014
+CUSTOMER=Customer
+FIRSTNAME=Firstname
+LASTNAME=Lastname
 +-----+
+
+
 

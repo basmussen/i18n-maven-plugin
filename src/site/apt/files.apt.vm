@@ -30,9 +30,7 @@ Internationalization files
 
  Add your i18n.xls file into src/main/i18n.
 
-+-----+
-TODO screenshot
-+-----+
+[./images/screenshot.png]
 
 * Output resource files
  

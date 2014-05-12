@@ -28,12 +28,96 @@
 
 Usage
 
- The i18n Maven Plugin is generally used for Maven plugins. Its goals are bound to different phases in the build life cycle. So when you execute a specific phase, the Plugin Plugin goals bound to it are also executed. Aside from this, each goal can also be explicitly executed from the command line.
+ i18n Maven Plugin goals are bound to different phases in the maven build life cycle. So when you execute a specific phase, the Plugin goals bound to it are also executed. Aside from this, each goal can also be explicitly executed from the command line.
  
-* The <<<i18n:i18n>>> Goal
-	
- To generate i18n resource files, execute the following on the command line:
-	
+
+
+* Plugin
+
 +-----+
-mvn i18n:i18n
+<project>
+  ...
+  <build>
+   ...
+   <plugins>
+     ...
+     <plugin>
+       <groupId>${project.groupId}</groupId>
+       <artifactId>${project.artifactId}</artifactId>
+       <version>${project.version}</version>
+        <executions>
+          <execution>
+            <id>i18n</id>
+            <phase>generate-resources</phase>
+            <goals>
+               <goal>i18n</goal>
+            </goals>
+          </execution>
+        </executions>
+     </plugin>
+     ...
+   </plugins>
+   ...
+  </build>
+  ...
+</project>
++-----+
+
+** Plugin Configuration
+
++-----+
+<build>
+  <plugins>
+    <plugin>
+      <groupId>com.benasmussen.maven</groupId>
+      <artifactId>i18n-maven-plugin</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+      <executions>
+        <execution>
+          <id>i18n</id>
+          <phase>generate-resources</phase>
+          <goals>
+            <goal>i18n</goal>
+          </goals>
+        </execution>
+      </executions>
+      <configuration>
+        <localeCell>C1</localeCell>
+        <keyCell>B4</keyCell>
+        <files>
+          <file>src/main/resources/test.xls</file>
+        </files>
+        <outputFormat>
+          <format>properties</format>
+          <format>json</format>
+          <format>xml</format>
+        </outputFormat>
+        <outputDirectory>target/i18n</outputDirectory>
+        <outputEncoding>UTF-8</outputEncoding>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
++-----+
+
+
+** Maven Repository
+
+ Add the following maven repository to your pom.xml file to use the plugin.
+
++-----+
+<project>
+  ...
+  <repository>
+    <id>github-plugin-releases</id>
+    <url>http://basmussen.github.io/repos/maven/plugins/releases/</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </repository>  
+  ...
+</project>
 +-----+
