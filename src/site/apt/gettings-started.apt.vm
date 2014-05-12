@@ -108,16 +108,18 @@ Usage
 +-----+
 <project>
   ...
-  <repository>
-    <id>github-plugin-releases</id>
-    <url>http://basmussen.github.io/repos/maven/plugins/releases/</url>
-    <releases>
-      <enabled>true</enabled>
-    </releases>
-    <snapshots>
-      <enabled>false</enabled>
-    </snapshots>
-  </repository>  
+  <pluginRepositories>
+    <pluginRepository>
+      <id>github-plugin-releases</id>
+      <url>http://basmussen.github.io/repos/maven/plugins/releases/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>  
   ...
 </project>
 +-----+
