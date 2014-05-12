@@ -1,8 +1,10 @@
 # [i18n Maven Plugin]( http://github.com/basmussen/i18n-maven-plugin/ )
 
-Handle internationalization and localization easily with the Apache Maven Plugin i18n.
+Handle internationalization and localization easily with the i18n Maven Plugin.
 
-To get started and see how the plungin works, check out the project page!
+To get started and see how the plungin works, check out the [project page][project-page]!
+
+[project-page]: http://basmussen.github.io/i18n-maven-plugin/
 
 
 Convert your Excel sheets to resource files. Your input file `i18n.xls` will be converted to different output resource files.
@@ -61,85 +63,11 @@ invoice_en.xml
 </properties>
 ```
 
-
-[bootstrap]: http://basmussen.github.io/i18n-maven-plugin
-
-## Usage
-
-To use this i18n Maven Plugin, include it in your `pom.xml` file:
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<build>
-  ..
-  <plugins>
-    ...
-    <plugin>
-      <groupId>com.benasmussen.maven</groupId>
-      <artifactId>i18n-maven-plugin</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
-      <executions>
-        <execution>
-          <id>i18n</id>
-          <phase>generate-resources</phase>
-          <goals>
-            <goal>i18n</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>
-    ...
-  </plugins>
-  ...
-</build>
-```
-
-### Configuration
+##  Usage Configuration
 
 Refer to [documentation][i18n-config] for all configuration options.
 
-[i18n-config]: http://basmussen.github.io/i18n-maven-plugin/config.html
-
-A sample configuration file is given below:
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<build>
-  ..
-  <plugins>
-    ...
-    <plugin>
-      <groupId>com.benasmussen.maven</groupId>
-      <artifactId>i18n-maven-plugin</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
-      <executions>
-        <execution>
-          <id>i18n</id>
-          <phase>generate-resources</phase>
-          <goals>
-            <goal>i18n</goal>
-          </goals>
-        </execution>
-      </executions>
-      <configuration>
-        <localeCell>C1</localeCell>
-        <keyCell>B4</keyCell>
-        <files>
-          <file>src/main/i18n/codes.xls</file>
-        </files>
-        <outputFormat>
-          <format>properties</format>
-          <format>json</format>
-          <format>xml</format>
-        </outputFormat>
-      </configuration>
-    </plugin>
-    ...
-  </plugins>
-  ...
-</build>
-```
-
+[i18n-config]: http://basmussen.github.io/i18n-maven-plugin/gettings-started.html
 
 
 ## Bug tracker
