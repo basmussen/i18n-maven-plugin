@@ -7,11 +7,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Hervé Boutemy, Simone &quot;Simo&quot; Tripodi" />
-    <meta name="Date-Creation-yyyymmdd" content="20120628" />
     <meta name="Date-Revision-yyyymmdd" content="20140512" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>i18n Maven Plugin - Introduction</title>
+    <title>i18n Maven Plugin - 
+    i18n:help</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -87,10 +86,12 @@
                 <ul class="nav nav-list">
                     <li class="nav-header">Overview</li>
                               
-      <li class="active">
+      <li>
   
-            <a href="#"><i class="none"></i>Introduction</a>
-          </li>
+                          <a href="index.html" title="Introduction">
+          <i class="none"></i>
+        Introduction</a>
+            </li>
                 
       <li>
   
@@ -113,90 +114,13 @@
         Files</a>
             </li>
                               <li class="nav-header">Project Documentation</li>
-                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                    
       <li>
   
                           <a href="project-info.html" title="Project Information">
-          <i class="icon-chevron-down"></i>
+          <i class="icon-chevron-right"></i>
         Project Information</a>
-                    <ul class="nav nav-list">
-                    
-      <li class="active">
-  
-            <a href="#"><i class="none"></i>About</a>
-          </li>
-                    
-      <li>
-  
-                          <a href="dependencies.html" title="Dependencies">
-          <i class="none"></i>
-        Dependencies</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="dependency-info.html" title="Dependency Information">
-          <i class="none"></i>
-        Dependency Information</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="distribution-management.html" title="Distribution Management">
-          <i class="none"></i>
-        Distribution Management</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="issue-tracking.html" title="Issue Tracking">
-          <i class="none"></i>
-        Issue Tracking</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="license.html" title="Project License">
-          <i class="none"></i>
-        Project License</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="plugin-management.html" title="Plugin Management">
-          <i class="none"></i>
-        Plugin Management</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="plugins.html" title="Project Plugins">
-          <i class="none"></i>
-        Project Plugins</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="team-list.html" title="Project Team">
-          <i class="none"></i>
-        Project Team</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="source-repository.html" title="Source Repository">
-          <i class="none"></i>
-        Source Repository</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="project-summary.html" title="Project Summary">
-          <i class="none"></i>
-        Project Summary</a>
-            </li>
-              </ul>
-        </li>
+                  </li>
                                                                                                       
       <li>
   
@@ -225,30 +149,155 @@
                 
         <div id="bodyColumn"  class="span9" >
                                   
-            <!-- Licensed to the Apache Software Foundation (ASF) under one --><!-- or more contributor license agreements.  See the NOTICE file --><!-- distributed with this work for additional information --><!-- regarding copyright ownership.  The ASF licenses this file --><!-- to you under the Apache License, Version 2.0 (the --><!-- "License"); you may not use this file except in compliance --><!-- with the License.  You may obtain a copy of the License at --><!--  --><!-- http://www.apache.org/licenses/LICENSE-2.0 --><!--  --><!-- Unless required by applicable law or agreed to in writing, --><!-- software distributed under the License is distributed on an --><!-- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY --><!-- KIND, either express or implied.  See the License for the --><!-- specific language governing permissions and limitations --><!-- under the License. --><!-- NOTE: For help with the syntax of this file, see: --><!-- http://maven.apache.org/doxia/references/apt-format.html --><div class="section">
-<h2>Welcome to i18n Maven Plugin!<a name="Welcome_to_i18n_Maven_Plugin"></a></h2>
-<p>Handle internationalization and localization easily with the i18n Maven Plugin. Convert your Excel sheets to resource files. Your input file i18n.xls will be converted to different output resource files. To get started and see how the plugin could be used, check out this project documentation! </p><img src="./images/screenshot.png" alt="" />
+            
+  
+    <div class="section">
+<h2>i18n:help<a name="i18n:help"></a></h2>
+      
+<p><b>Full name</b>:</p>
+      
+<p>com.benasmussen.maven:i18n-maven-plugin:1.0.0:help</p>
+      
+<p><b>Description</b>:</p>
+      
+<div>Display help information on i18n-maven-plugin.<br />
+Call <tt>mvn i18n:help -Ddetail=true
+-Dgoal=&lt;goal-name&gt;</tt> to display parameter details.</div>
+      
+<p><b>Attributes</b>:</p>
+      
+<ul>
+        
+<li>The goal is thread-safe and supports parallel builds.</li>
+      </ul>
+      
 <div class="section">
-<h3>Location<a name="Location"></a></h3>
-<div class="source">
-<pre>src/main/i18n/i18n.xls</pre></div></div>
+<h3>Optional Parameters<a name="Optional_Parameters"></a></h3>
+        
+<table class="table table-striped" border="0">
+          
+<tr class="a">
+            
+<th>Name</th>
+            
+<th>Type</th>
+            
+<th>Since</th>
+            
+<th>Description</th>
+          </tr>
+          
+<tr class="b">
+            
+<td><b><a href="#detail">detail</a></b></td>
+            
+<td><tt>boolean</tt></td>
+            
+<td><tt>-</tt></td>
+            
+<td>If <tt>true</tt>, display all settable properties for each
+goal.<br /><b>Default value is</b>: <tt>false</tt>.<br /><b>User property is</b>: <tt>detail</tt>.</td>
+          </tr>
+          
+<tr class="a">
+            
+<td><b><a href="#goal">goal</a></b></td>
+            
+<td><tt>String</tt></td>
+            
+<td><tt>-</tt></td>
+            
+<td>The name of the goal for which to show help. If unspecified, all
+goals will be displayed.<br /><b>User property is</b>: <tt>goal</tt>.</td>
+          </tr>
+          
+<tr class="b">
+            
+<td><b><a href="#indentSize">indentSize</a></b></td>
+            
+<td><tt>int</tt></td>
+            
+<td><tt>-</tt></td>
+            
+<td>The number of spaces per indentation level, should be positive.<br /><b>Default value is</b>: <tt>2</tt>.<br /><b>User property is</b>: <tt>indentSize</tt>.</td>
+          </tr>
+          
+<tr class="a">
+            
+<td><b><a href="#lineLength">lineLength</a></b></td>
+            
+<td><tt>int</tt></td>
+            
+<td><tt>-</tt></td>
+            
+<td>The maximum length of a display line, should be positive.<br /><b>Default value is</b>: <tt>80</tt>.<br /><b>User property is</b>: <tt>lineLength</tt>.</td>
+          </tr>
+        </table>
+      </div>
+      
 <div class="section">
-<h3>Output<a name="Output"></a></h3>
-<div class="section">
-<h4>Files<a name="Files"></a></h4>
-<div class="source">
-<pre>customer.properties
-customer_en.properties
-invoice.properties
-invoice_en.properties</pre></div></div>
-<div class="section">
-<h4>Content<a name="Content"></a></h4>
-<div class="source">
-<pre>#Generated file customer.properties
-#Sat May 10 01:56:34 CEST 2014
-CUSTOMER=Customer
-FIRSTNAME=Firstname
-LASTNAME=Lastname</pre></div></div></div></div>
+<h3>Parameter Details<a name="Parameter_Details"></a></h3>
+        
+<p><b><a name="detail">detail</a>:</b></p>
+        
+<div>If <tt>true</tt>, display all settable properties for each
+goal.</div>
+        
+<ul>
+          
+<li><b>Type</b>: <tt>boolean</tt></li>
+          
+<li><b>Required</b>: <tt>No</tt></li>
+          
+<li><b>User Property</b>: <tt>detail</tt></li>
+          
+<li><b>Default</b>: <tt>false</tt></li>
+        </ul><hr />
+<p><b><a name="goal">goal</a>:</b></p>
+        
+<div>The name of the goal for which to show help. If unspecified, all
+goals will be displayed.</div>
+        
+<ul>
+          
+<li><b>Type</b>: <tt>java.lang.String</tt></li>
+          
+<li><b>Required</b>: <tt>No</tt></li>
+          
+<li><b>User Property</b>: <tt>goal</tt></li>
+        </ul><hr />
+<p><b><a name="indentSize">indentSize</a>:</b></p>
+        
+<div>The number of spaces per indentation level, should be positive.</div>
+        
+<ul>
+          
+<li><b>Type</b>: <tt>int</tt></li>
+          
+<li><b>Required</b>: <tt>No</tt></li>
+          
+<li><b>User Property</b>: <tt>indentSize</tt></li>
+          
+<li><b>Default</b>: <tt>2</tt></li>
+        </ul><hr />
+<p><b><a name="lineLength">lineLength</a>:</b></p>
+        
+<div>The maximum length of a display line, should be positive.</div>
+        
+<ul>
+          
+<li><b>Type</b>: <tt>int</tt></li>
+          
+<li><b>Required</b>: <tt>No</tt></li>
+          
+<li><b>User Property</b>: <tt>lineLength</tt></li>
+          
+<li><b>Default</b>: <tt>80</tt></li>
+        </ul>
+      </div>
+    </div>
+  
+
                   </div>
             </div>
           </div>

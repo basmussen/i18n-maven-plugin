@@ -7,11 +7,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Hervé Boutemy, Simone &quot;Simo&quot; Tripodi" />
-    <meta name="Date-Creation-yyyymmdd" content="20120628" />
     <meta name="Date-Revision-yyyymmdd" content="20140512" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>i18n Maven Plugin - Introduction</title>
+    <title>i18n Maven Plugin - Dependency Information</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -87,10 +85,12 @@
                 <ul class="nav nav-list">
                     <li class="nav-header">Overview</li>
                               
-      <li class="active">
+      <li>
   
-            <a href="#"><i class="none"></i>Introduction</a>
-          </li>
+                          <a href="index.html" title="Introduction">
+          <i class="none"></i>
+        Introduction</a>
+            </li>
                 
       <li>
   
@@ -121,10 +121,12 @@
         Project Information</a>
                     <ul class="nav nav-list">
                     
-      <li class="active">
+      <li>
   
-            <a href="#"><i class="none"></i>About</a>
-          </li>
+                          <a href="index.html" title="About">
+          <i class="none"></i>
+        About</a>
+            </li>
                     
       <li>
   
@@ -133,12 +135,10 @@
         Dependencies</a>
             </li>
                     
-      <li>
+      <li class="active">
   
-                          <a href="dependency-info.html" title="Dependency Information">
-          <i class="none"></i>
-        Dependency Information</a>
-            </li>
+            <a href="#"><i class="none"></i>Dependency Information</a>
+          </li>
                     
       <li>
   
@@ -225,30 +225,45 @@
                 
         <div id="bodyColumn"  class="span9" >
                                   
-            <!-- Licensed to the Apache Software Foundation (ASF) under one --><!-- or more contributor license agreements.  See the NOTICE file --><!-- distributed with this work for additional information --><!-- regarding copyright ownership.  The ASF licenses this file --><!-- to you under the Apache License, Version 2.0 (the --><!-- "License"); you may not use this file except in compliance --><!-- with the License.  You may obtain a copy of the License at --><!--  --><!-- http://www.apache.org/licenses/LICENSE-2.0 --><!--  --><!-- Unless required by applicable law or agreed to in writing, --><!-- software distributed under the License is distributed on an --><!-- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY --><!-- KIND, either express or implied.  See the License for the --><!-- specific language governing permissions and limitations --><!-- under the License. --><!-- NOTE: For help with the syntax of this file, see: --><!-- http://maven.apache.org/doxia/references/apt-format.html --><div class="section">
-<h2>Welcome to i18n Maven Plugin!<a name="Welcome_to_i18n_Maven_Plugin"></a></h2>
-<p>Handle internationalization and localization easily with the i18n Maven Plugin. Convert your Excel sheets to resource files. Your input file i18n.xls will be converted to different output resource files. To get started and see how the plugin could be used, check out this project documentation! </p><img src="./images/screenshot.png" alt="" />
+            <div class="section">
+<h2>Dependency Information<a name="Dependency_Information"></a></h2><a name="Dependency_Information"></a>
 <div class="section">
-<h3>Location<a name="Location"></a></h3>
+<h3>Apache Maven<a name="Apache_Maven"></a></h3><a name="Apache_Maven"></a>
 <div class="source">
-<pre>src/main/i18n/i18n.xls</pre></div></div>
+<pre>&lt;dependency&gt;
+  &lt;groupId&gt;com.benasmussen.maven&lt;/groupId&gt;
+  &lt;artifactId&gt;i18n-maven-plugin&lt;/artifactId&gt;
+  &lt;version&gt;1.0.0&lt;/version&gt;
+  &lt;type&gt;maven-plugin&lt;/type&gt;
+&lt;/dependency&gt;</pre></div></div>
 <div class="section">
-<h3>Output<a name="Output"></a></h3>
-<div class="section">
-<h4>Files<a name="Files"></a></h4>
+<h3>Apache Buildr<a name="Apache_Buildr"></a></h3><a name="Apache_Buildr"></a>
 <div class="source">
-<pre>customer.properties
-customer_en.properties
-invoice.properties
-invoice_en.properties</pre></div></div>
+<pre>'com.benasmussen.maven:i18n-maven-plugin:maven-plugin:1.0.0'</pre></div></div>
 <div class="section">
-<h4>Content<a name="Content"></a></h4>
+<h3>Apache Ant<a name="Apache_Ant"></a></h3><a name="Apache_Ant"></a>
 <div class="source">
-<pre>#Generated file customer.properties
-#Sat May 10 01:56:34 CEST 2014
-CUSTOMER=Customer
-FIRSTNAME=Firstname
-LASTNAME=Lastname</pre></div></div></div></div>
+<pre>&lt;dependency org=&quot;com.benasmussen.maven&quot; name=&quot;i18n-maven-plugin&quot; rev=&quot;1.0.0&quot;&gt;
+  &lt;artifact name=&quot;i18n-maven-plugin&quot; type=&quot;maven-plugin&quot; /&gt;
+&lt;/dependency&gt;</pre></div></div>
+<div class="section">
+<h3>Groovy Grape<a name="Groovy_Grape"></a></h3><a name="Groovy_Grape"></a>
+<div class="source">
+<pre>@Grapes(
+@Grab(group='com.benasmussen.maven', module='i18n-maven-plugin', version='1.0.0')
+)</pre></div></div>
+<div class="section">
+<h3>Grails<a name="Grails"></a></h3><a name="Grails"></a>
+<div class="source">
+<pre>compile 'com.benasmussen.maven:i18n-maven-plugin:1.0.0'</pre></div></div>
+<div class="section">
+<h3>Leiningen<a name="Leiningen"></a></h3><a name="Leiningen"></a>
+<div class="source">
+<pre>[com.benasmussen.maven/i18n-maven-plugin &quot;1.0.0&quot;]</pre></div></div>
+<div class="section">
+<h3>SBT<a name="SBT"></a></h3><a name="SBT"></a>
+<div class="source">
+<pre>libraryDependencies += &quot;com.benasmussen.maven&quot; %% &quot;i18n-maven-plugin&quot; % &quot;1.0.0&quot;</pre></div></div></div>
                   </div>
             </div>
           </div>

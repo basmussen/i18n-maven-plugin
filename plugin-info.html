@@ -7,11 +7,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Hervé Boutemy, Simone &quot;Simo&quot; Tripodi" />
-    <meta name="Date-Creation-yyyymmdd" content="20120628" />
     <meta name="Date-Revision-yyyymmdd" content="20140512" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>i18n Maven Plugin - Introduction</title>
+    <title>i18n Maven Plugin - Plugin Documentation</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -87,17 +85,17 @@
                 <ul class="nav nav-list">
                     <li class="nav-header">Overview</li>
                               
-      <li class="active">
-  
-            <a href="#"><i class="none"></i>Introduction</a>
-          </li>
-                
       <li>
   
-                          <a href="plugin-info.html" title="Goals">
+                          <a href="index.html" title="Introduction">
           <i class="none"></i>
-        Goals</a>
+        Introduction</a>
             </li>
+                
+      <li class="active">
+  
+            <a href="#"><i class="none"></i>Goals</a>
+          </li>
                 
       <li>
   
@@ -113,97 +111,41 @@
         Files</a>
             </li>
                               <li class="nav-header">Project Documentation</li>
-                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                    
       <li>
   
                           <a href="project-info.html" title="Project Information">
-          <i class="icon-chevron-down"></i>
+          <i class="icon-chevron-right"></i>
         Project Information</a>
+                  </li>
+                                                                                                                
+      <li>
+  
+                          <a href="project-reports.html" title="Project Reports">
+          <i class="icon-chevron-down"></i>
+        Project Reports</a>
                     <ul class="nav nav-list">
                     
       <li class="active">
   
-            <a href="#"><i class="none"></i>About</a>
+            <a href="#"><i class="none"></i>Plugin Documentation</a>
           </li>
                     
       <li>
   
-                          <a href="dependencies.html" title="Dependencies">
+                          <a href="apidocs/index.html" title="JavaDocs">
           <i class="none"></i>
-        Dependencies</a>
+        JavaDocs</a>
             </li>
                     
       <li>
   
-                          <a href="dependency-info.html" title="Dependency Information">
+                          <a href="testapidocs/index.html" title="Test JavaDocs">
           <i class="none"></i>
-        Dependency Information</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="distribution-management.html" title="Distribution Management">
-          <i class="none"></i>
-        Distribution Management</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="issue-tracking.html" title="Issue Tracking">
-          <i class="none"></i>
-        Issue Tracking</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="license.html" title="Project License">
-          <i class="none"></i>
-        Project License</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="plugin-management.html" title="Plugin Management">
-          <i class="none"></i>
-        Plugin Management</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="plugins.html" title="Project Plugins">
-          <i class="none"></i>
-        Project Plugins</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="team-list.html" title="Project Team">
-          <i class="none"></i>
-        Project Team</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="source-repository.html" title="Source Repository">
-          <i class="none"></i>
-        Source Repository</a>
-            </li>
-                    
-      <li>
-  
-                          <a href="project-summary.html" title="Project Summary">
-          <i class="none"></i>
-        Project Summary</a>
+        Test JavaDocs</a>
             </li>
               </ul>
         </li>
-                                                                                                      
-      <li>
-  
-                          <a href="project-reports.html" title="Project Reports">
-          <i class="icon-chevron-right"></i>
-        Project Reports</a>
-                  </li>
             </ul>
                 
                     
@@ -225,30 +167,69 @@
                 
         <div id="bodyColumn"  class="span9" >
                                   
-            <!-- Licensed to the Apache Software Foundation (ASF) under one --><!-- or more contributor license agreements.  See the NOTICE file --><!-- distributed with this work for additional information --><!-- regarding copyright ownership.  The ASF licenses this file --><!-- to you under the Apache License, Version 2.0 (the --><!-- "License"); you may not use this file except in compliance --><!-- with the License.  You may obtain a copy of the License at --><!--  --><!-- http://www.apache.org/licenses/LICENSE-2.0 --><!--  --><!-- Unless required by applicable law or agreed to in writing, --><!-- software distributed under the License is distributed on an --><!-- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY --><!-- KIND, either express or implied.  See the License for the --><!-- specific language governing permissions and limitations --><!-- under the License. --><!-- NOTE: For help with the syntax of this file, see: --><!-- http://maven.apache.org/doxia/references/apt-format.html --><div class="section">
-<h2>Welcome to i18n Maven Plugin!<a name="Welcome_to_i18n_Maven_Plugin"></a></h2>
-<p>Handle internationalization and localization easily with the i18n Maven Plugin. Convert your Excel sheets to resource files. Your input file i18n.xls will be converted to different output resource files. To get started and see how the plugin could be used, check out this project documentation! </p><img src="./images/screenshot.png" alt="" />
+            <div class="section">
+<h2>Plugin Documentation<a name="Plugin_Documentation"></a></h2><a name="Plugin_Documentation"></a>
+<p>Goals available for this plugin:</p>
+<table border="0" class="table table-striped">
+<tr class="a">
+<th>Goal</th>
+<th>Description</th></tr>
+<tr class="b">
+<td><a href="help-mojo.html">i18n:help</a></td>
+<td>Display help information on i18n-maven-plugin.<br />
+Call <code>mvn i18n:help -Ddetail=true
+-Dgoal=&lt;goal-name&gt;</code> to display parameter details.</td></tr>
+<tr class="a">
+<td><a href="i18n-mojo.html">i18n:i18n</a></td>
+<td>Goal which create internationalization resource files from i18n.xls</td></tr></table>
 <div class="section">
-<h3>Location<a name="Location"></a></h3>
+<h3>System Requirements<a name="System_Requirements"></a></h3><a name="System_Requirements"></a>
+<p>The following specifies the minimum requirements to run this Maven plugin:</p>
+<table border="0" class="table table-striped">
+<tr class="a">
+<td>Maven</td>
+<td>2.0</td></tr>
+<tr class="b">
+<td>JDK</td>
+<td>1.7</td></tr>
+<tr class="a">
+<td>Memory</td>
+<td>No minimum requirement.</td></tr>
+<tr class="b">
+<td>Disk Space</td>
+<td>No minimum requirement.</td></tr></table></div>
+<div class="section">
+<h3>Usage<a name="Usage"></a></h3><a name="Usage"></a>
+<p>You should specify the version in your project's plugin configuration:</p>
 <div class="source">
-<pre>src/main/i18n/i18n.xls</pre></div></div>
-<div class="section">
-<h3>Output<a name="Output"></a></h3>
-<div class="section">
-<h4>Files<a name="Files"></a></h4>
-<div class="source">
-<pre>customer.properties
-customer_en.properties
-invoice.properties
-invoice_en.properties</pre></div></div>
-<div class="section">
-<h4>Content<a name="Content"></a></h4>
-<div class="source">
-<pre>#Generated file customer.properties
-#Sat May 10 01:56:34 CEST 2014
-CUSTOMER=Customer
-FIRSTNAME=Firstname
-LASTNAME=Lastname</pre></div></div></div></div>
+<pre>&lt;project&gt;
+  ...
+  &lt;build&gt;
+    &lt;!-- To define the plugin version in your parent POM --&gt;
+    &lt;pluginManagement&gt;
+      &lt;plugins&gt;
+        &lt;plugin&gt;
+          &lt;groupId&gt;com.benasmussen.maven&lt;/groupId&gt;
+          &lt;artifactId&gt;i18n-maven-plugin&lt;/artifactId&gt;
+          &lt;version&gt;1.0.0&lt;/version&gt;
+        &lt;/plugin&gt;
+        ...
+      &lt;/plugins&gt;
+    &lt;/pluginManagement&gt;
+    &lt;!-- To use the plugin goals in your POM or parent POM --&gt;
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;com.benasmussen.maven&lt;/groupId&gt;
+        &lt;artifactId&gt;i18n-maven-plugin&lt;/artifactId&gt;
+        &lt;version&gt;1.0.0&lt;/version&gt;
+      &lt;/plugin&gt;
+      ...
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+  ...
+&lt;/project&gt;
+</pre></div>
+<p>For more information, see <a class="externalLink" href="http://maven.apache.org/guides/mini/guide-configuring-plugins.html">&quot;Guide to Configuring Plug-ins&quot;</a></p></div></div>
                   </div>
             </div>
           </div>
