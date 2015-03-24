@@ -69,6 +69,9 @@ Refer to [documentation][i18n-config] for all configuration options.
 
 [i18n-config]: http://basmussen.github.io/i18n-maven-plugin/gettings-started.html
 
+## Continuous integration
+
+[![Build Status](https://travis-ci.org/basmussen/i18n-maven-plugin.svg)](https://travis-ci.org/basmussen/i18n-maven-plugin)
 
 ## Bug tracker
 
