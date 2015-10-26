@@ -34,11 +34,9 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
 import com.benasmussen.maven.plugin.i18n.domain.ResourceEntry;
-import com.benasmussen.maven.plugin.i18n.io.JsonResourceWriter;
-import com.benasmussen.maven.plugin.i18n.io.PropertiesResourceWriter;
+import com.benasmussen.maven.plugin.i18n.io.OutputFormat;
 import com.benasmussen.maven.plugin.i18n.io.ResourceReader;
 import com.benasmussen.maven.plugin.i18n.io.ResourceWriter;
-import com.benasmussen.maven.plugin.i18n.io.XmlResourceWriter;
 
 /**
  * Goal which create internationalization resource files from i18n.xls
@@ -48,10 +46,6 @@ public class InternationalizationMojo extends AbstractMojo
 {
 
     private static final String DEFAULT_FILE = "src/main/i18n/i18n.xls";
-
-    public static final String FORMAT_JSON = "json";
-    public static final String FORMAT_XML = "xml";
-    public static final String FORMAT_PROPERTIES = "properties";
 
     /**
      * Location of the file.
@@ -85,12 +79,12 @@ public class InternationalizationMojo extends AbstractMojo
 
     /**
      * Resource file output format. Supported values <br>
-     * properties <br>
-     * json <br>
+     * properties <br/>
+     * json <br/>
      * xml
      */
     @Parameter(property = "outputFormat", required = true)
-    private List<String> outputFormat;
+    private List<OutputFormat> outputFormat;
 
     public void execute() throws MojoExecutionException
     {
@@ -129,28 +123,11 @@ public class InternationalizationMojo extends AbstractMojo
 
                 List<ResourceEntry> resultEntries = resourceReader.getEntries();
 
-                List<ResourceWriter> resourceWriter = new ArrayList<ResourceWriter>();
-
-                // properties
-                if (outputFormat.contains(FORMAT_PROPERTIES))
-                {
-                    resourceWriter.add(new PropertiesResourceWriter());
-                }
-                // json
-                if (outputFormat.contains(FORMAT_JSON))
-                {
-                    resourceWriter.add(new JsonResourceWriter());
-                }
-
-                // xml
-                if (outputFormat.contains(FORMAT_XML))
-                {
-                    resourceWriter.add(new XmlResourceWriter());
-                }
-
                 // process output writer
-                for (ResourceWriter writer : resourceWriter)
+                for (OutputFormat format : outputFormat)
                 {
+                    // get writer based on specified format
+                    ResourceWriter writer = format.getWriter();
                     writer.setOutputEnconding(outputEncoding);
                     writer.setOutputFolder(outputDirectory);
                     writer.setResourceEntries(resultEntries);
