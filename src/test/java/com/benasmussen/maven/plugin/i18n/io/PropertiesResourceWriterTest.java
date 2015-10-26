@@ -23,9 +23,11 @@ package com.benasmussen.maven.plugin.i18n.io;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Properties;
 
 import org.junit.After;
 import org.junit.Before;
@@ -42,22 +44,21 @@ import com.benasmussen.maven.plugin.i18n.domain.ResourceEntry;
  * @author Ben Asmussen
  *
  */
-public class JsonPropertiesWriterTest
+public class PropertiesResourceWriterTest
 {
 
-    private JsonResourceWriter resourceWriter;
-    
+    private PropertiesResourceWriter resourceWriter;
+
     @Rule
     public TemporaryFolder temp = new TemporaryFolder();
 
-    private File tempDirectory;
-
+    private File tempDirectory = null;
 
     @Before
     public void setUp() throws Exception
     {
         tempDirectory = temp.getRoot();
-        resourceWriter = new JsonResourceWriter();
+        resourceWriter = new PropertiesResourceWriter();
         resourceWriter.setOutputFolder(tempDirectory);
     }
 
@@ -88,12 +89,21 @@ public class JsonPropertiesWriterTest
         resourceWriter.write();
 
         // locale default
-        File fileDefault = new File(tempDirectory, "customer.json");
+        File fileDefault = new File(tempDirectory, "customer.properties");
         assertTrue(fileDefault.exists());
 
+        Properties propertiesDefault = new Properties();
+        propertiesDefault.load(new FileReader(fileDefault));
+        assertEquals("Customer", propertiesDefault.get("CUSTOMER"));
+
         // locale de
-        File fileDe = new File(tempDirectory, "customer_de.json");
+        File fileDe = new File(tempDirectory, "customer_de.properties");
         assertTrue(fileDe.exists());
+
+        Properties propertiesDe = new Properties();
+        propertiesDe.load(new FileReader(fileDe));
+        assertEquals("Kunde", propertiesDe.get("CUSTOMER"));
+
     }
 
 }

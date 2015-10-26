@@ -23,11 +23,9 @@ package com.benasmussen.maven.plugin.i18n.io;
 import static org.junit.Assert.*;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Properties;
 
 import org.junit.After;
 import org.junit.Before;
@@ -39,26 +37,27 @@ import com.benasmussen.maven.plugin.i18n.domain.KeyEntry;
 import com.benasmussen.maven.plugin.i18n.domain.ResourceEntry;
 
 /**
- * Properties writer test
+ * Json writer test
  * 
  * @author Ben Asmussen
  *
  */
-public class XmlWriterTest
+public class JsonResourceWriterTest
 {
 
-    private XmlResourceWriter resourceWriter;
+    private JsonResourceWriter resourceWriter;
     
     @Rule
     public TemporaryFolder temp = new TemporaryFolder();
-    
-    private File tempDirectory = null;
+
+    private File tempDirectory;
+
 
     @Before
     public void setUp() throws Exception
     {
         tempDirectory = temp.getRoot();
-        resourceWriter = new XmlResourceWriter();
+        resourceWriter = new JsonResourceWriter();
         resourceWriter.setOutputFolder(tempDirectory);
     }
 
@@ -89,21 +88,12 @@ public class XmlWriterTest
         resourceWriter.write();
 
         // locale default
-        File fileDefault = new File(tempDirectory, "customer.xml");
+        File fileDefault = new File(tempDirectory, "customer.json");
         assertTrue(fileDefault.exists());
 
-        Properties propertiesDefault = new Properties();
-        propertiesDefault.loadFromXML(new FileInputStream(fileDefault));
-        assertEquals("Customer", propertiesDefault.get("CUSTOMER"));
-
         // locale de
-        File fileDe = new File(tempDirectory, "customer_de.xml");
+        File fileDe = new File(tempDirectory, "customer_de.json");
         assertTrue(fileDe.exists());
-
-        Properties propertiesDe = new Properties();
-        propertiesDe.loadFromXML(new FileInputStream(fileDe));
-        assertEquals("Kunde", propertiesDe.get("CUSTOMER"));
-
     }
 
 }

@@ -23,7 +23,7 @@ package com.benasmussen.maven.plugin.i18n.io;
 import static org.junit.Assert.*;
 
 import java.io.File;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
@@ -39,26 +39,26 @@ import com.benasmussen.maven.plugin.i18n.domain.KeyEntry;
 import com.benasmussen.maven.plugin.i18n.domain.ResourceEntry;
 
 /**
- * Properties writer test
+ * Xml writer test
  * 
  * @author Ben Asmussen
  *
  */
-public class PropertiesWriterTest
+public class XmlResourceWriterTest
 {
 
-    private PropertiesResourceWriter resourceWriter;
-
+    private XmlResourceWriter resourceWriter;
+    
     @Rule
     public TemporaryFolder temp = new TemporaryFolder();
-
+    
     private File tempDirectory = null;
 
     @Before
     public void setUp() throws Exception
     {
         tempDirectory = temp.getRoot();
-        resourceWriter = new PropertiesResourceWriter();
+        resourceWriter = new XmlResourceWriter();
         resourceWriter.setOutputFolder(tempDirectory);
     }
 
@@ -89,19 +89,19 @@ public class PropertiesWriterTest
         resourceWriter.write();
 
         // locale default
-        File fileDefault = new File(tempDirectory, "customer.properties");
+        File fileDefault = new File(tempDirectory, "customer.xml");
         assertTrue(fileDefault.exists());
 
         Properties propertiesDefault = new Properties();
-        propertiesDefault.load(new FileReader(fileDefault));
+        propertiesDefault.loadFromXML(new FileInputStream(fileDefault));
         assertEquals("Customer", propertiesDefault.get("CUSTOMER"));
 
         // locale de
-        File fileDe = new File(tempDirectory, "customer_de.properties");
+        File fileDe = new File(tempDirectory, "customer_de.xml");
         assertTrue(fileDe.exists());
 
         Properties propertiesDe = new Properties();
-        propertiesDe.load(new FileReader(fileDe));
+        propertiesDe.loadFromXML(new FileInputStream(fileDe));
         assertEquals("Kunde", propertiesDe.get("CUSTOMER"));
 
     }
