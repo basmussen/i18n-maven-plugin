@@ -35,8 +35,18 @@ import com.benasmussen.maven.plugin.i18n.domain.ResourceEntry;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+/**
+ * Json resource writer
+ *
+ * @author basmussen
+ *
+ */
 public class JsonResourceWriter extends AbstractResourceWriter<LinkedHashMap<String, String>>
 {
+    public JsonResourceWriter()
+    {
+        setEscaping(Escaping.NONE);
+    }
 
     @Override
     protected void before(ResourceEntry resourceEntry)
@@ -61,7 +71,7 @@ public class JsonResourceWriter extends AbstractResourceWriter<LinkedHashMap<Str
 
             String value = keyEntry.getLocaleValues().get(locale);
 
-            jsonMap.put(keyEntry.getKey(), value);
+            jsonMap.put(keyEntry.getKey(), escaping.apply(value));
         }
     }
 

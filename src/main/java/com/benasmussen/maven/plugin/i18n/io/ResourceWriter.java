@@ -33,5 +33,7 @@ public interface ResourceWriter
 
     void setResourceEntries(List<ResourceEntry> resourceEntries);
 
+    void setEscaping(Escaping escaping);
+
     void write();
 }

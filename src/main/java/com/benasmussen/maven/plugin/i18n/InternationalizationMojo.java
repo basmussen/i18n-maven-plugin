@@ -24,7 +24,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.maven.plugin.AbstractMojo;
@@ -34,6 +36,7 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
 import com.benasmussen.maven.plugin.i18n.domain.ResourceEntry;
+import com.benasmussen.maven.plugin.i18n.io.Escaping;
 import com.benasmussen.maven.plugin.i18n.io.OutputFormat;
 import com.benasmussen.maven.plugin.i18n.io.ResourceReader;
 import com.benasmussen.maven.plugin.i18n.io.ResourceWriter;
@@ -41,6 +44,7 @@ import com.benasmussen.maven.plugin.i18n.io.ResourceWriter;
 /**
  * Goal which create internationalization resource files from i18n.xls
  */
+@SuppressWarnings("unused")
 @Mojo(name = "i18n", defaultPhase = LifecyclePhase.PROCESS_RESOURCES)
 public class InternationalizationMojo extends AbstractMojo
 {
@@ -86,6 +90,36 @@ public class InternationalizationMojo extends AbstractMojo
     @Parameter(property = "outputFormat", required = true)
     private List<OutputFormat> outputFormat;
 
+    /**
+     * Override escaping method for special characters when writing resources
+     *
+     * All defaults can be overriden with the <code>escaping</code> parameter.
+     *
+     * @see #escaping
+     */
+    @Parameter(property = "escapings")
+    private Map<OutputFormat, Escaping> escapings = new HashMap<>();
+
+    /**
+     * Overrides the default escaping method for add formats.
+     * Supported values: <br/>
+     * <code>NONE</code><br/>
+     * <code>JAVA</code> <br/>
+     * <code>HTML</code><br/>
+     * <code>XML</code><br/>
+     *
+     * Defaults:<br/>
+     * properties: JAVA<br/>
+     * json: NONE<br/>
+     * xml: NONE
+     *
+     * For custom overrides use the <code>escapings</code> map.
+     *
+     * @see #escapings
+     */
+    @Parameter(property = "escaping")
+    private Escaping escaping;
+
     public void execute() throws MojoExecutionException
     {
         String currentFile = null;
@@ -128,6 +162,16 @@ public class InternationalizationMojo extends AbstractMojo
                 {
                     // get writer based on specified format
                     ResourceWriter writer = format.getWriter();
+                    // overwrite the default escaping
+                    if (escapings.containsKey(format))
+                    {
+                        writer.setEscaping(escapings.get(format));
+                    }
+                    else if (escaping != null)
+                    {
+                        writer.setEscaping(escaping);
+                    }
+                    // set other properties
                     writer.setOutputEnconding(outputEncoding);
                     writer.setOutputFolder(outputDirectory);
                     writer.setResourceEntries(resultEntries);
@@ -162,4 +206,28 @@ public class InternationalizationMojo extends AbstractMojo
         this.files = files;
     }
 
+    public void setKeyCell(String keyCell)
+    {
+        this.keyCell = keyCell;
+    }
+
+    public void setLocaleCell(String localeCell)
+    {
+        this.localeCell = localeCell;
+    }
+
+    public void setOutputFormat(List<OutputFormat> outputFormat)
+    {
+        this.outputFormat = outputFormat;
+    }
+
+    public void setEscapings(Map<OutputFormat, Escaping> escapings)
+    {
+        this.escapings = escapings;
+    }
+
+    public void setEscaping(Escaping escaping)
+    {
+        this.escaping = escaping;
+    }
 }

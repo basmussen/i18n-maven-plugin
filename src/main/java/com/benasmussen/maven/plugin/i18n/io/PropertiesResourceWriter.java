@@ -29,7 +29,6 @@ import java.util.Properties;
 import java.util.Set;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringEscapeUtils;
 
 import com.benasmussen.maven.plugin.i18n.domain.KeyEntry;
 import com.benasmussen.maven.plugin.i18n.domain.ResourceEntry;
@@ -37,12 +36,16 @@ import com.benasmussen.maven.plugin.i18n.lang.OrderedProperties;
 
 /**
  * Properties resource writer
- * 
+ *
  * @author basmussen
  *
  */
 public class PropertiesResourceWriter extends AbstractResourceWriter<Properties>
 {
+    public PropertiesResourceWriter()
+    {
+        setEscaping(Escaping.JAVA);
+    }
 
     @Override
     protected void before(ResourceEntry resourceEntry)
@@ -66,8 +69,8 @@ public class PropertiesResourceWriter extends AbstractResourceWriter<Properties>
             Properties properties = output.get(locale);
 
             String value = keyEntry.getLocaleValues().get(locale);
-            
-            properties.put(keyEntry.getKey(), StringEscapeUtils. escapeJava(value));
+
+            properties.put(keyEntry.getKey(), escaping.apply(value));
         }
     }
 
