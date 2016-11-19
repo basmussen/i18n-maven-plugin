@@ -27,11 +27,13 @@ import com.benasmussen.maven.plugin.i18n.domain.ResourceEntry;
 
 public interface ResourceWriter
 {
-    public void setOutputEnconding(String outputEnconding);
+    void setOutputEnconding(String outputEnconding);
 
-    public void setOutputFolder(File outputFolder);
+    void setOutputFolder(File outputFolder);
 
-    public void setResourceEntries(List<ResourceEntry> resourceEntries);
+    void setResourceEntries(List<ResourceEntry> resourceEntries);
 
-    public void write();
+    void setEscaping(Escaping escaping);
+
+    void write();
 }

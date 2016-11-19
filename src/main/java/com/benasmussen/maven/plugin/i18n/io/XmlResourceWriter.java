@@ -40,6 +40,11 @@ import com.benasmussen.maven.plugin.i18n.domain.ResourceEntry;
  */
 public class XmlResourceWriter extends AbstractResourceWriter<Properties>
 {
+    public XmlResourceWriter()
+    {
+        setEscaping(Escaping.NONE);
+    }
+
     @Override
     protected void before(ResourceEntry resourceEntry)
     {
@@ -63,7 +68,7 @@ public class XmlResourceWriter extends AbstractResourceWriter<Properties>
 
             String value = keyEntry.getLocaleValues().get(locale);
 
-            properties.put(keyEntry.getKey(), value);
+            properties.put(keyEntry.getKey(), escaping.apply(value));
         }
     }
 

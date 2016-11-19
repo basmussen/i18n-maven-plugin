@@ -23,7 +23,6 @@ package com.benasmussen.maven.plugin.i18n.io;
 import static org.junit.Assert.*;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -45,7 +44,7 @@ import com.benasmussen.maven.plugin.i18n.domain.ResourceEntry;
  * @author Ben Asmussen
  *
  */
-public class PropertiesWriterTest
+public class PropertiesResourceWriterTest
 {
 
     private PropertiesResourceWriter resourceWriter;
@@ -70,19 +69,17 @@ public class PropertiesWriterTest
     }
 
     @Test
-    public void testWrite() throws FileNotFoundException, IOException
+    public void testWrite() throws IOException
     {
         ResourceEntry resourceEntry = new ResourceEntry("customer");
         resourceEntry.getLocales().add("DEFAULT");
         resourceEntry.getLocales().add("de");
 
-        KeyEntry keyEntry1 = new KeyEntry("CUSTOMER");
-        resourceEntry.add(keyEntry1);
+        KeyEntry customer = new KeyEntry("CUSTOMER");
+        resourceEntry.add(customer);
 
-        keyEntry1.getLocaleValues().put("DEFAULT", "Customer");
-        keyEntry1.getLocales().add("DEFAULT");
-        keyEntry1.getLocales().add("de");
-        keyEntry1.getLocaleValues().put("de", "Kunde");
+        customer.addValue("DEFAULT", "Customer");
+        customer.addValue("de", "Kunde");
 
         List<ResourceEntry> entries = new LinkedList<ResourceEntry>();
         entries.add(resourceEntry);
@@ -105,7 +102,6 @@ public class PropertiesWriterTest
 
         Properties propertiesDe = new Properties();
         propertiesDe.load(new FileReader(fileDe));
-
         assertEquals("Kunde", propertiesDe.get("CUSTOMER"));
 
     }

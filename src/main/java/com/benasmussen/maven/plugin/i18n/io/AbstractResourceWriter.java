@@ -42,6 +42,8 @@ public abstract class AbstractResourceWriter<T> implements ResourceWriter
 
     List<ResourceEntry> resourceEntries;
 
+    Escaping escaping;
+
     protected void before(ResourceEntry resourceEntry)
     {
         output = new HashMap<String, T>();
@@ -121,6 +123,11 @@ public abstract class AbstractResourceWriter<T> implements ResourceWriter
     public void setOutputEnconding(String outputEnconding)
     {
         this.outputEnconding = outputEnconding;
+    }
+
+    public void setEscaping(Escaping escaping)
+    {
+        this.escaping = escaping;
     }
 
 }
