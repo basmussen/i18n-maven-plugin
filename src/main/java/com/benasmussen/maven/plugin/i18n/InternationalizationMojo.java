@@ -145,40 +145,50 @@ public class InternationalizationMojo extends AbstractMojo
                 currentFile = file;
 
                 getLog().info("Process file " + file);
+				
+				File f = new File(file);
 
-                is = new FileInputStream(file);
+				if (f.exists()) 
+				{
+					
+					is = new FileInputStream(f);
 
-                // xls resource reader
-                ResourceReader resourceReader = new ResourceReader(is);
-                resourceReader.setKeyCell(keyCell);
-                resourceReader.setLocaleCell(localeCell);
+					// xls resource reader
+					ResourceReader resourceReader = new ResourceReader(is);
+					resourceReader.setKeyCell(keyCell);
+					resourceReader.setLocaleCell(localeCell);
 
-                resourceReader.process();
+					resourceReader.process();
 
-                List<ResourceEntry> resultEntries = resourceReader.getEntries();
+					List<ResourceEntry> resultEntries = resourceReader.getEntries();
 
-                // process output writer
-                for (OutputFormat format : outputFormat)
-                {
-                    // get writer based on specified format
-                    ResourceWriter writer = format.getWriter();
-                    // overwrite the default escaping
-                    if (escapings.containsKey(format))
-                    {
-                        writer.setEscaping(escapings.get(format));
-                    }
-                    else if (escaping != null)
-                    {
-                        writer.setEscaping(escaping);
-                    }
-                    // set other properties
-                    writer.setOutputEnconding(outputEncoding);
-                    writer.setOutputFolder(outputDirectory);
-                    writer.setResourceEntries(resultEntries);
-                    writer.write();
-                }
+					// process output writer
+					for (OutputFormat format : outputFormat)
+					{
+						// get writer based on specified format
+						ResourceWriter writer = format.getWriter();
+						// overwrite the default escaping
+						if (escapings.containsKey(format))
+						{
+							writer.setEscaping(escapings.get(format));
+						}
+						else if (escaping != null)
+						{
+							writer.setEscaping(escaping);
+						}
+						// set other properties
+						writer.setOutputEnconding(outputEncoding);
+						writer.setOutputFolder(outputDirectory);
+						writer.setResourceEntries(resultEntries);
+						writer.write();
+					}
 
-                IOUtils.closeQuietly(is);
+					IOUtils.closeQuietly(is);
+				}
+				else
+				{
+					getLog().info("Skipped, file not found: " + file);
+				}
             }
         }
         catch (Exception e)
