@@ -143,13 +143,12 @@ public class InternationalizationMojo extends AbstractMojo
             for (String file : files)
             {
                 currentFile = file;
-
-                getLog().info("Process file " + file);
 				
 				File f = new File(file);
 
 				if (f.exists()) 
 				{
+					getLog().info("Process file " + file);
 					
 					is = new FileInputStream(f);
 
